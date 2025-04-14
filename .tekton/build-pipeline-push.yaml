@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   annotations:
-    build.appstudio.openshift.io/repo: https://github.com/RedHatInsights/konflux-pipelines?rev={{revision}}
+    build.appstudio.openshift.io/repo: https://github.com/ryemorris/konflux-pipelines?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
@@ -15,7 +15,7 @@ metadata:
     appstudio.openshift.io/component: build-pipeline
     pipelines.appstudio.openshift.io/type: build
   name: build-pipeline-on-push
-  namespace: hcc-integrations-tenant
+  namespace: rh-ee-rymorris
 spec:
   params:
   - name: git-url
@@ -23,7 +23,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/hcc-integrations-tenant/konflux-pipelines/build-pipeline:{{revision}}
+    value: quay.io/ry-ee-rymorris/konflux-security-compliance/konflux-pipelines/build-pipeline:{{revision}}
   - name: dockerfile
     value: dockerfiles/Dockerfile
   - name: path-context
