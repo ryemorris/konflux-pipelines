@@ -16,7 +16,7 @@ metadata:
     appstudio.openshift.io/component: build-pipeline
     pipelines.appstudio.openshift.io/type: build
   name: build-pipeline-on-pull-request
-  namespace: rh-ee-rymorris 
+  namespace: rh-ee-rymorris-tenant 
 spec:
   params:
   - name: git-url
