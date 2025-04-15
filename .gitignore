@@ -30,3 +30,6 @@ nb-configuration.xml
 # Emacs
 *~
 \#*\#
+
+# testing
+.tekton/shared_*
