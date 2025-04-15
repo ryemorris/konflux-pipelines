@@ -12,7 +12,7 @@ metadata:
     pipelinesascode.tekton.dev/pipeline: "pipelines/docker-build.yaml"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: konflux-pipelines
+    appstudio.openshift.io/application: test
     appstudio.openshift.io/component: build-pipeline
     pipelines.appstudio.openshift.io/type: build
   name: build-pipeline-on-pull-request
