@@ -8,7 +8,7 @@ metadata:
     pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main"
+      == "security-compliance"
     pipelinesascode.tekton.dev/pipeline: pipelines/docker-build.yaml
   creationTimestamp: null
   labels:
@@ -16,7 +16,7 @@ metadata:
     appstudio.openshift.io/component: build-pipeline
     pipelines.appstudio.openshift.io/type: build
   name: build-pipeline-on-push
-  namespace: hcc-integrations-tenant
+  namespace: hcc-fr-tenant
 spec:
   params:
   - name: git-url
@@ -24,7 +24,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/hcc-integrations-tenant/konflux-pipelines/build-pipeline:{{revision}}
+    value: quay.io/redhat-user-workloads/hcc-fr-tenant/konflux-pipelines/build-pipeline:{{revision}}
   - name: dockerfile
     value: dockerfiles/Dockerfile
   - name: path-context
